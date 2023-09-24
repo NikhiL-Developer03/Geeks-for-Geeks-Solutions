@@ -1,2 +1,2 @@
-# LeetCode-GFG
-Collection of LeetCode & GFG questions to ace the coding interview!
+# Geeks-for-Geeks Solution
+Collection of Geeks-for-Geeks questions to ace the coding interview!
