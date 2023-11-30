@@ -10,24 +10,28 @@ class Solution{
 public:	
 	// Function to check if array has 2 elements
 	// whose sum is equal to the given value
+	bool twosum2pointerapproach(int arr[], int n, int x){
+        sort(arr,arr+n);
+        int L=0;
+        int R=n-1;
+        int sum = 0;
+        while(L<R){
+            sum = arr[L]+arr[R];
+            if(sum==x){
+                return true;
+            }
+            else if(sum>x){
+                R--;
+                
+            }
+            else {
+                L++;
+            }
+        }
+        return false;
+    }
 	bool hasArrayTwoCandidates(int arr[], int n, int x) {
-	    sort(arr,arr+n);
-	    int left = 0;
-	    int right = n-1;
-	    int sum = 0;
-	    while(left<right){
-	        int sum = arr[left]+arr[right];
-	        if(sum==x){
-	            return true;
-	        }
-	        else if(sum<x){
-	            left++;
-	        }
-	        else{
-	            right--;
-	        }
-	    }
-	    return false;
+	    return twosum2pointerapproach(arr,n,x);
 	}
 };
 
