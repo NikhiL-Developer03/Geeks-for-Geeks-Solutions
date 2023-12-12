@@ -8,15 +8,15 @@ public:
     long maximumSumSubarray(int K, vector<int> &Arr , int N){
         long long maxSum = 0;
         long long sum = 0;
+        int i=0;
+        int j=K;
         for(int a=0;a<K;a++){
             sum=sum+Arr[a];
         }
         maxSum = sum;
-        int i=K;
-        while(i<N){
-            sum=sum+Arr[i];
-            sum=sum-Arr[i-K];
-            i++;
+        while(j<N){
+            sum=sum-Arr[i++];
+            sum=sum+Arr[j++];
             maxSum = max(sum,maxSum);
         }
         return maxSum;
